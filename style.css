@@ -108,3 +108,43 @@ body {
     font-style: italic;
     font-size: 0.85rem;
   }
+.back-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.class-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.class-toggle button {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+
+.class-toggle button.active {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.coming-soon-box {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.loader-icon {
+    font-size: 3rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
