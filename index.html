@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PRAGYANOM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app">
+        <header class="glass-header">
+            <div class="logo-container">
+                <img src="logopng.webp" alt="Logo" class="main-logo">
+            </div>
+            <h1 class="brand-name">PRAGYANOM</h1>
+        </header>
+
+        <main id="view-container">
+            <div class="welcome-text">
+                <h2 id="greeting">Connecting...</h2>
+                <p class="quote">"Gateway to Excellence"</p>
+            </div>
+            
+            <div class="nav-grid">
+                <div class="nav-card" onclick="loadSection('notes')">
+                    <span class="icon">📚</span>
+                    <h3>Notes</h3>
+                </div>
+                <div class="nav-card" onclick="loadSection('videos')">
+                    <span class="icon">🎥</span>
+                    <h3>Videos</h3>
+                </div>
+                <div class="nav-card" onclick="loadSection('updates')">
+                    <span class="icon">🔔</span>
+                    <h3>Updates</h3>
+                </div>
+                <div class="nav-card" onclick="loadSection('tests')">
+                    <span class="icon">✍️</span>
+                    <h3>Tests</h3>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
