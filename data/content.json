@@ -8,11 +8,9 @@
       "timestamp": "2026-03-23"
     }
   ],
-  "notes": {
+    "notes": {
     "class9": {
-      "English": [
-        { "title": "The Fun They Had", "file": "ch1.pdf", "status": "free" }
-      ],
+      "English": [],
       "General_Science": [],
       "General_Mathematics": [],
       "Social_Science": [],
@@ -20,10 +18,16 @@
     },
     "class10": {
       "English": [],
-      "General_Science": [],
+      "General_Science": [
+        {
+          "title": "Science Chapter 1",
+          "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F",
+          "status": "free"
+        }
+      ],
       "General_Mathematics": [],
       "Social_Science": [],
       "Assamese": []
-    }
+        }
   }
 }
