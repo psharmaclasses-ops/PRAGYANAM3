@@ -1,0 +1,21 @@
+{
+  "name": "PRAGYANOM",
+  "short_name": "PRAGYANOM",
+  "description": "Premium Educational Platform for Class 9 & 10",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e293b",
+  "icons": [
+    {
+      "src": "logopng.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "logopng.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
