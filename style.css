@@ -1,0 +1,110 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --primary: #1a1a2e;
+    --secondary: #16213e;
+    --accent: #e94560; /* Professional Coral/Gold */
+    --text: #ffffff;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top right, var(--secondary), var(--primary));
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Header & Logo --- */
+.glass-header {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--glass-border);
+    border-radius: 0 0 30px 30px;
+}
+
+.main-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--accent);
+    animation: pulseRotate 6s infinite ease-in-out;
+}
+
+@keyframes pulseRotate {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.08) rotate(5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+.brand-name {
+    margin-top: 15px;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+    background: linear-gradient(to right, #fff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Navigation Grid --- */
+.nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.nav-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.nav-card:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nav-card h3 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* --- Welcome Text --- */
+.welcome-text {
+    padding: 30px 25px 5px;
+    text-align: left;
+}
+
+#greeting {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.quote {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 0.85rem;
+  }
