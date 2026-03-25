@@ -1,9 +1,9 @@
+let appData = null;
+let currentClass = 'class9';
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
 }
-
-let appData = null;
-let currentClass = 'class9';
 
 async function initApp() {
     try {
@@ -11,7 +11,7 @@ async function initApp() {
         appData = await response.json();
         renderHome();
     } catch (e) {
-        document.getElementById('greeting').innerText = "Offline Mode";
+        console.error("Data load failed");
     }
 }
 
@@ -33,7 +33,31 @@ function renderHome() {
 
 function loadSection(section) {
     if (section === 'notes') renderNotesMenu();
+    else if (section === 'updates') renderNotifications();
     else renderPlaceholder(section);
+}
+
+function renderNotifications() {
+    const container = document.getElementById('view-container');
+    const list = appData.notifications || [];
+    container.innerHTML = `
+        <div class="section-header">
+            <button onclick="renderHome()" class="back-btn">← Home</button>
+            <h2>Notifications</h2>
+        </div>
+        <div class="pdf-list">
+            ${list.reverse().map(n => `
+                <div class="nav-card pdf-card" style="flex-direction:column !important; align-items:flex-start !important;">
+                    <div style="display:flex; justify-content:space-between; width:100%;">
+                        <span class="badge ${n.type}">${n.type.toUpperCase()}</span>
+                        <small style="color:rgba(255,255,255,0.4)">${n.timestamp}</small>
+                    </div>
+                    <h3 style="margin-top:10px">${n.title}</h3>
+                    <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); margin-top:5px;">${n.message}</p>
+                </div>
+            `).join('')}
+        </div>
+    `;
 }
 
 function renderNotesMenu() {
@@ -70,8 +94,7 @@ function viewSubject(subject) {
         <div class="pdf-list">
             ${items.length > 0 ? items.map(item => `
                 <div class="nav-card pdf-card">
-                    <h3>${item.title}</h3>
-                    <span class="badge ${item.status}">${item.status.toUpperCase()}</span>
+                    <h3 style="font-size:0.9rem">${item.title}</h3>
                     <a href="${item.file}" target="_blank" class="view-btn">View PDF</a>
                 </div>
             `).join('') : '<p class="coming-soon">Content coming soon!</p>'}
