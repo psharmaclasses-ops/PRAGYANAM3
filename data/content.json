@@ -13,52 +13,53 @@
       "message": "New PDF notes added: Class 10 Science (Ch 5) and English (Report Writing & Transformation of Sentences). Check them now!",
       "type": "urgent",
       "timestamp": "2026-03-25"
+    },
+    {
+      "id": 3,
+      "title": "Timed Test Live! ⏱️",
+      "message": "English Grammar (Tenses) timed practice test is now live in the Tests section. You have a limited time to finish!",
+      "type": "urgent",
+      "timestamp": "2026-03-26"
     }
   ],
   "notes": {
     "class9": {
-      "English": [],
-      "General_Science": [],
-      "General_Mathematics": [],
-      "Social_Science": [],
-      "Assamese": []
+      "English": [], "General_Science": [], "General_Mathematics": [], "Social_Science": [], "Assamese": []
+    },
+    "class10": {
+      "English": [
+        { "title": "Report Writing", "file": "https://drive.google.com/uc?id=1FYFQ6bklTSsiTCTZtKLD3D91iTZa0CVa", "status": "free" },
+        { "title": "Transformation of Sentences", "file": "https://drive.google.com/uc?id=1uAMhQ4SzccbniQIR0_YNFRXQnu-GU5x4", "status": "free" }
+      ],
+      "General_Science": [
+        { "title": "Science Chapter 1", "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F", "status": "free" },
+        { "title": "Science Chapter 5", "file": "https://drive.google.com/uc?id=1T_sMOgLrxCyIhK-9qvqrUhdKh7qUaNyG", "status": "free" }
+      ],
+      "General_Mathematics": [], "Social_Science": [], "Assamese": []
+    }
+  },
+  "videos": {
+    "class9": { "General_Science": [] },
+    "class10": { "General_Science": [] }
+  },
+  "tests": {
+    "class9": { 
+      "English": [
+        {
+          "title": "Grammar: Tense Mastery (Timed)",
+          "link": "https://app.quilgo.com/t/QcR7c9YPfZVJsRIc",
+          "status": "free"
+        }
+      ]
     },
     "class10": {
       "English": [
         {
-          "title": "Report Writing",
-          "file": "https://drive.google.com/uc?id=1FYFQ6bklTSsiTCTZtKLD3D91iTZa0CVa",
-          "status": "free"
-        },
-        {
-          "title": "Transformation of Sentences",
-          "file": "https://drive.google.com/uc?id=1uAMhQ4SzccbniQIR0_YNFRXQnu-GU5x4",
+          "title": "Grammar: Tense Mastery (Timed)",
+          "link": "https://app.quilgo.com/t/QcR7c9YPfZVJsRIc",
           "status": "free"
         }
-      ],
-      "General_Science": [
-        {
-          "title": "Science Chapter 1",
-          "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F",
-          "status": "free"
-        },
-        {
-          "title": "Science Chapter 5",
-          "file": "https://drive.google.com/uc?id=1T_sMOgLrxCyIhK-9qvqrUhdKh7qUaNyG",
-          "status": "free"
-        }
-      ],
-      "General_Mathematics": [],
-      "Social_Science": [],
-      "Assamese": []
-    }
-  },
-  "videos": {
-    "class9": {
-      "General_Science": []
-    },
-    "class10": {
-      "General_Science": []
+      ]
     }
   }
 }
