@@ -34,7 +34,7 @@ function renderHome() {
 function loadSection(section) {
     if (section === 'notes') renderNotesMenu();
     else if (section === 'updates') renderNotifications();
-    else if (section === 'tests') renderTestsMenu(); // Fixed: Now points to the test menu
+    else if (section === 'tests') renderTestsMenu();
     else renderPlaceholder(section);
 }
 
@@ -103,7 +103,7 @@ function viewSubject(subject) {
     `;
 }
 
-// --- NEW TEST SECTION LOGIC ---
+// --- TEST SECTION LOGIC ---
 
 function renderTestsMenu() {
     const container = document.getElementById('view-container');
