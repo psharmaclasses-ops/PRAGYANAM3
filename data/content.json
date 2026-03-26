@@ -20,6 +20,13 @@
       "message": "English Grammar (Tenses) timed practice test is now live in the Tests section. You have a limited time to finish!",
       "type": "urgent",
       "timestamp": "2026-03-26"
+    },
+    {
+      "id": 4,
+      "title": "New English Lessons! 📖",
+      "message": "New PDF notes added: A Letter to God, Nelson Mandela: Long Walk to Freedom, and A Tiger in the Zoo. Happy learning!",
+      "type": "info",
+      "timestamp": "2026-03-26"
     }
   ],
   "notes": {
@@ -28,6 +35,9 @@
     },
     "class10": {
       "English": [
+        { "title": "A Letter to God", "file": "https://drive.google.com/uc?id=1ENHiIm0ymRk2GFcxJtfAAzlhaYsdYGb4", "status": "free" },
+        { "title": "Nelson Mandela: A Long Walk to Freedom", "file": "https://drive.google.com/uc?id=1lO8QSDx1_H0uDsQwv-P46OFdhEJkL3xP", "status": "free" },
+        { "title": "A Tiger in the Zoo", "file": "https://drive.google.com/uc?id=1prgnBTKGtyVTqG9AjYFIr4igNlHFVZV0", "status": "free" },
         { "title": "Report Writing", "file": "https://drive.google.com/uc?id=1FYFQ6bklTSsiTCTZtKLD3D91iTZa0CVa", "status": "free" },
         { "title": "Transformation of Sentences", "file": "https://drive.google.com/uc?id=1uAMhQ4SzccbniQIR0_YNFRXQnu-GU5x4", "status": "free" }
       ],
