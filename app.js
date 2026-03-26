@@ -34,6 +34,7 @@ function renderHome() {
 function loadSection(section) {
     if (section === 'notes') renderNotesMenu();
     else if (section === 'updates') renderNotifications();
+    else if (section === 'tests') renderTestsMenu(); // Fixed: Now points to the test menu
     else renderPlaceholder(section);
 }
 
@@ -46,7 +47,7 @@ function renderNotifications() {
             <h2>Notifications</h2>
         </div>
         <div class="pdf-list">
-            ${list.reverse().map(n => `
+            ${list.slice().reverse().map(n => `
                 <div class="nav-card pdf-card" style="flex-direction:column !important; align-items:flex-start !important;">
                     <div style="display:flex; justify-content:space-between; width:100%;">
                         <span class="badge ${n.type}">${n.type.toUpperCase()}</span>
@@ -98,6 +99,50 @@ function viewSubject(subject) {
                     <a href="${item.file}" target="_blank" class="view-btn">View PDF</a>
                 </div>
             `).join('') : '<p class="coming-soon">Content coming soon!</p>'}
+        </div>
+    `;
+}
+
+// --- NEW TEST SECTION LOGIC ---
+
+function renderTestsMenu() {
+    const container = document.getElementById('view-container');
+    container.innerHTML = `
+        <div class="section-header">
+            <button onclick="renderHome()" class="back-btn">← Home</button>
+            <h2>Practice Tests</h2>
+        </div>
+        <div class="class-toggle">
+            <button class="${currentClass==='class9'?'active':''}" onclick="setTestClass('class9')">Class 9</button>
+            <button class="${currentClass==='class10'?'active':''}" onclick="setTestClass('class10')">Class 10</button>
+        </div>
+        <div class="nav-grid">
+            ${['English', 'General_Science', 'General_Mathematics'].map(sub => `
+                <div class="nav-card small" onclick="viewTestSubject('${sub}')">
+                    <h3>${sub.replace('_', ' ')}</h3>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function setTestClass(cls) { currentClass = cls; renderTestsMenu(); }
+
+function viewTestSubject(subject) {
+    const container = document.getElementById('view-container');
+    const items = appData.tests[currentClass][subject] || [];
+    container.innerHTML = `
+        <div class="section-header">
+            <button onclick="renderTestsMenu()" class="back-btn">← Back</button>
+            <h2 style="margin-top:10px">${subject.replace('_', ' ')} Tests</h2>
+        </div>
+        <div class="pdf-list">
+            ${items.length > 0 ? items.map(item => `
+                <div class="nav-card pdf-card">
+                    <h3 style="font-size:0.9rem">${item.title}</h3>
+                    <a href="${item.link}" target="_blank" class="view-btn">Start Test</a>
+                </div>
+            `).join('') : '<p class="coming-soon">No tests available yet!</p>'}
         </div>
     `;
 }
