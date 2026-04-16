@@ -23,20 +23,19 @@ async function initApp() {
 
 function renderHome() {
     const container = document.getElementById('view-container');
-    // Check if new content was added in the last 3 days
     const isNew = appData.lastUpdate && (new Date() - new Date(appData.lastUpdate)) / (1000 * 60 * 60 * 24) < 3;
     
     container.innerHTML = `
-        <div class="welcome-text">
+        <div class="welcome-text" style="text-align: center; margin-bottom: 30px;">
             <img src="./logopng.webp" alt="Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 10px; display: block; border: 3px solid #38bdf8; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);">
             
-            <h1 style="letter-spacing: 5px; color: #f8fafc; font-size: 1.8rem; margin-bottom: 20px; text-transform: uppercase;">PRAGYANOM</h1>
+            <h1 style="letter-spacing: 5px; color: #f8fafc; font-size: 1.8rem; margin-bottom: 20px; text-transform: uppercase; font-weight: bold;">PRAGYANOM</h1>
             
-            <h2 id="greeting" style="color: #38bdf8; font-size: 1.4rem;">Namaste, Student!</h2>
-            <p class="quote">"Gateway to Excellence"</p>
+            <h2 id="greeting" style="color: #38bdf8; font-size: 1.4rem; margin-top: 10px;">Namaste, Student!</h2>
+            <p class="quote" style="font-style: italic; opacity: 0.8; font-size: 0.9rem;">"Gateway to Excellence"</p>
         </div>
 
-        <div class="nav-grid">
+        <div class="nav-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
             <div class="nav-card" onclick="loadSection('notes')">
                 ${isNew ? '<span class="new-tag">NEW</span>' : ''}
                 <span class="icon">📚</span><h3>Notes</h3>
