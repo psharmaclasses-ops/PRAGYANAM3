@@ -1,88 +1,41 @@
 {
+  "lastUpdate": "2026-04-16",
   "notifications": [
-    {
-      "id": 1,
-      "title": "Welcome to PRAGYANOM",
-      "message": "Start your journey to excellence today!",
-      "type": "info",
-      "timestamp": "2026-03-23"
-    },
-    {
-      "id": 2,
-      "title": "New Content Uploaded!",
-      "message": "New PDF notes added: Class 10 Science (Ch 5) and English (Report Writing & Transformation of Sentences). Check them now!",
-      "type": "urgent",
-      "timestamp": "2026-03-25"
-    },
-    {
-      "id": 3,
-      "title": "Timed Test Live! ⏱️",
-      "message": "English Grammar (Tenses) timed practice test is now live in the Tests section. You have a limited time to finish!",
-      "type": "urgent",
-      "timestamp": "2026-03-26"
-    },
-    {
-      "id": 4,
-      "title": "New English Lessons! 📖",
-      "message": "New PDF notes added: A Letter to God, Nelson Mandela: Long Walk to Freedom, and A Tiger in the Zoo. Happy learning!",
-      "type": "info",
-      "timestamp": "2026-03-26"
-    },
-    {
-      "id": 5,
-      "title": "New Lessons Added! 📚",
-      "message": "Assamese (বৰগীত, উদ্যোগী হওঁ আহাঁ) and Social Science (বংগ বিভাজন আৰু স্বদেশী আন্দোলন) notes are now available.",
-      "type": "info",
-      "timestamp": "2026-04-16"
-    }
+    { "id": 1, "title": "Welcome to PRAGYANOM", "message": "Start your journey to excellence today!", "type": "info", "timestamp": "2026-03-23" },
+    { "id": 5, "title": "New Lessons Added! 📚", "message": "Assamese and Social Science notes are now available.", "type": "info", "timestamp": "2026-04-16" }
   ],
   "notes": {
-    "class9": {
-      "English": [], "General_Science": [], "General_Mathematics": [], "Social_Science": [], "Assamese": []
-    },
+    "class9": { "English": [], "General_Science": [], "General_Mathematics": [], "Social_Science": [], "Assamese": [] },
     "class10": {
       "English": [
         { "title": "A Letter to God", "file": "https://drive.google.com/uc?id=1ENHiIm0ymRk2GFcxJtfAAzlhaYsdYGb4", "status": "free" },
-        { "title": "Nelson Mandela: A Long Walk to Freedom", "file": "https://drive.google.com/uc?id=1lO8QSDx1_H0uDsQwv-P46OFdhEJkL3xP", "status": "free" },
-        { "title": "A Tiger in the Zoo", "file": "https://drive.google.com/uc?id=1prgnBTKGtyVTqG9AjYFIr4igNlHFVZV0", "status": "free" },
-        { "title": "Report Writing", "file": "https://drive.google.com/uc?id=1FYFQ6bklTSsiTCTZtKLD3D91iTZa0CVa", "status": "free" },
-        { "title": "Transformation of Sentences", "file": "https://drive.google.com/uc?id=1uAMhQ4SzccbniQIR0_YNFRXQnu-GU5x4", "status": "free" }
+        { "title": "Nelson Mandela", "file": "https://drive.google.com/uc?id=1lO8QSDx1_H0uDsQwv-P46OFdhEJkL3xP", "status": "free" }
       ],
       "General_Science": [
-        { "title": "Science Chapter 1", "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F", "status": "free" },
-        { "title": "Science Chapter 5", "file": "https://drive.google.com/uc?id=1T_sMOgLrxCyIhK-9qvqrUhdKh7qUaNyG", "status": "free" }
+        { "title": "Science Chapter 1", "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F", "status": "free" }
       ],
       "General_Mathematics": [],
       "Social_Science": [
-        { "title": "বংগ বিভাজন আৰু স্বদেশী আন্দোলন", "file": "https://drive.google.com/uc?id=1Ynl_M7gEjbWgNiuhrdzBmnS_ULR5t9lU", "status": "free" }
+        { "title": "বংগ বিভাজন", "file": "https://drive.google.com/uc?id=1Ynl_M7gEjbWgNiuhrdzBmnS_ULR5t9lU", "status": "free" }
       ],
       "Assamese": [
-        { "title": "বৰগীত", "file": "https://drive.google.com/uc?id=1WNAh7fbK9UTMKIIQwhTwoL5tG704cgzu", "status": "free" },
-        { "title": "উদ্যোগী হওঁ আহাঁ", "file": "https://drive.google.com/uc?id=1di-PrKglthlMSxLNTNoNvUvaMBy7VDrZ", "status": "free" }
+        { "title": "বৰগীত", "file": "https://drive.google.com/uc?id=1WNAh7fbK9UTMKIIQwhTwoL5tG704cgzu", "status": "free" }
       ]
     }
   },
   "videos": {
     "class9": { "General_Science": [] },
-    "class10": { "General_Science": [] }
+    "class10": {
+      "General_Science": [
+        { "title": "Chemical Reactions (Lecture 1)", "file": "https://www.youtube.com/embed/dQw4w9WgXcQ", "status": "free" }
+      ]
+    }
   },
   "tests": {
-    "class9": { 
-      "English": [
-        {
-          "title": "Grammar: Tense Mastery (Timed)",
-          "link": "https://app.quilgo.com/t/QcR7c9YPfZVJsRIc",
-          "status": "free"
-        }
-      ]
-    },
+    "class9": { "English": [] },
     "class10": {
       "English": [
-        {
-          "title": "Grammar: Tense Mastery (Timed)",
-          "link": "https://app.quilgo.com/t/QcR7c9YPfZVJsRIc",
-          "status": "free"
-        }
+        { "title": "Grammar: Tense Mastery (Timed)", "link": "https://app.quilgo.com/t/QcR7c9YPfZVJsRIc", "status": "free" }
       ]
     }
   }
