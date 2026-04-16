@@ -27,6 +27,13 @@
       "message": "New PDF notes added: A Letter to God, Nelson Mandela: Long Walk to Freedom, and A Tiger in the Zoo. Happy learning!",
       "type": "info",
       "timestamp": "2026-03-26"
+    },
+    {
+      "id": 5,
+      "title": "New Lessons Added! 📚",
+      "message": "Assamese (বৰগীত, উদ্যোগী হওঁ আহাঁ) and Social Science (বংগ বিভাজন আৰু স্বদেশী আন্দোলন) notes are now available.",
+      "type": "info",
+      "timestamp": "2026-04-16"
     }
   ],
   "notes": {
@@ -45,7 +52,14 @@
         { "title": "Science Chapter 1", "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F", "status": "free" },
         { "title": "Science Chapter 5", "file": "https://drive.google.com/uc?id=1T_sMOgLrxCyIhK-9qvqrUhdKh7qUaNyG", "status": "free" }
       ],
-      "General_Mathematics": [], "Social_Science": [], "Assamese": []
+      "General_Mathematics": [],
+      "Social_Science": [
+        { "title": "বংগ বিভাজন আৰু স্বদেশী আন্দোলন", "file": "https://drive.google.com/uc?id=1Ynl_M7gEjbWgNiuhrdzBmnS_ULR5t9lU", "status": "free" }
+      ],
+      "Assamese": [
+        { "title": "বৰগীত", "file": "https://drive.google.com/uc?id=1WNAh7fbK9UTMKIIQwhTwoL5tG704cgzu", "status": "free" },
+        { "title": "উদ্যোগী হওঁ আহাঁ", "file": "https://drive.google.com/uc?id=1di-PrKglthlMSxLNTNoNvUvaMBy7VDrZ", "status": "free" }
+      ]
     }
   },
   "videos": {
