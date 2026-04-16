@@ -1,238 +1,39 @@
-/* --- Global Reset & Variables --- */
-:root {
-    --primary: #1a1a2e;
-    --secondary: #16213e;
-    --accent: #e94560; /* Professional Coral/Gold */
-    --text: #ffffff;
-    --glass: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background: radial-gradient(circle at top right, var(--secondary), var(--primary));
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* --- Header & Logo --- */
-.glass-header {
-    background: var(--glass);
-    backdrop-filter: blur(15px);
-    padding: 30px 20px;
-    text-align: center;
-    border-bottom: 1px solid var(--glass-border);
-    border-radius: 0 0 30px 30px;
-}
-
-.main-logo {
-    width: 90px;
-    height: 90px;
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    box-shadow: 0 0 20px var(--accent);
-    animation: pulseRotate 6s infinite ease-in-out;
-}
-
-@keyframes pulseRotate {
-    0% { transform: scale(1) rotate(0deg); }
-    50% { transform: scale(1.08) rotate(5deg); }
-    100% { transform: scale(1) rotate(0deg); }
-}
-
-.brand-name {
-    margin-top: 15px;
-    font-size: 1.8rem;
-    letter-spacing: 4px;
-    font-weight: 600;
-    background: linear-gradient(to right, #fff, var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* --- Navigation Grid --- */
-.nav-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 25px;
-    margin-top: 20px;
-}
-
-.nav-card {
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 30px 15px;
     text-align: center;
-    transition: all 0.3s ease;
-}
-
-.nav-card:active {
-    transform: scale(0.95);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.nav-card h3 {
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-/* --- Welcome Text --- */
-.welcome-text {
-    padding: 30px 25px 5px;
-    text-align: left;
-}
-
-#greeting {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-}
-
-.quote {
-    color: rgba(255, 255, 255, 0.6);
-    font-style: italic;
-    font-size: 0.85rem;
-  }
-.back-btn {
-    background: none;
-    border: none;
-    color: var(--accent);
-    font-size: 1rem;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-.class-toggle {
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.class-toggle button {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 10px;
-}
-
-.class-toggle button.active {
-    background: var(--accent);
-    border-color: var(--accent);
-}
-
-.coming-soon-box {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.loader-icon {
-    font-size: 3rem;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin { 100% { transform: rotate(360deg); } }
-/* --- PDF & List Item Styles --- */
-.pdf-list {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Spacing between cards */
-}
-
-.pdf-card {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px !important;
-    text-align: left !important;
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-}
-
-/* --- Badge & Typography --- */
-.pdf-card h3 {
-    font-size: 0.95rem;
-    font-weight: 500;
-    flex: 1; /* Takes up available space */
-}
-
-.badge {
-    font-size: 10px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-right: 15px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-.badge.free { 
-    background: rgba(76, 175, 80, 0.1); 
-    color: #4caf50; 
-    border: 1px solid rgba(76, 175, 80, 0.3);
-}
-
-.badge.premium { 
-    background: rgba(233, 69, 96, 0.1); 
-    color: var(--accent); 
-    border: 1px solid rgba(233, 69, 96, 0.3);
-}
-.badge.urgent { 
-    background: rgba(233, 69, 96, 0.2); 
-    color: #ff4757; 
-    border: 1px solid #ff4757; 
-}
-
-.badge.info { 
-    background: rgba(30, 144, 255, 0.2); 
-    color: #1e90ff; 
-    border: 1px solid #1e90ff; 
-}
-
-
-
-/* --- The Premium View Button --- */
-.view-btn {
-    background: linear-gradient(135deg, var(--accent), #ff6b81);
-    color: white;
+    justify-content: center;
     text-decoration: none;
-    padding: 10px 20px;
+}
+
+/* NEW Tag Badge */
+.new-tag {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    font-size: 10px;
+    padding: 2px 8px;
     border-radius: 10px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
 }
 
-.view-btn:active {
-    transform: scale(0.92);
-    box-shadow: 0 2px 8px rgba(233, 69, 96, 0.2);
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
-
-/* --- Coming Soon Empty State --- */
-.coming-soon {
-    text-align: center;
-    padding: 40px;
-    color: rgba(255, 255, 255, 0.4);
-    font-style: italic;
-                 }
