@@ -1,6 +1,10 @@
 let appData = null;
 let currentClass = 'class10';
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+}
+
 async function initApp() {
     try {
         const response = await fetch('data/content.json');
@@ -19,13 +23,24 @@ async function initApp() {
 
 function renderHome() {
     const container = document.getElementById('view-container');
+    // Check if new content was added in the last 3 days
+    const isNew = appData.lastUpdate && (new Date() - new Date(appData.lastUpdate)) / (1000 * 60 * 60 * 24) < 3;
+    
     container.innerHTML = `
         <div class="welcome-text">
-            <h2>Namaste, Student!</h2>
+            <img src="./logopng.webp" alt="Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 10px; display: block; border: 3px solid #38bdf8; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);">
+            
+            <h1 style="letter-spacing: 5px; color: #f8fafc; font-size: 1.8rem; margin-bottom: 20px; text-transform: uppercase;">PRAGYANOM</h1>
+            
+            <h2 id="greeting" style="color: #38bdf8; font-size: 1.4rem;">Namaste, Student!</h2>
             <p class="quote">"Gateway to Excellence"</p>
         </div>
+
         <div class="nav-grid">
-            <div class="nav-card" onclick="loadSection('notes')"><span class="icon">📚</span><h3>Notes</h3></div>
+            <div class="nav-card" onclick="loadSection('notes')">
+                ${isNew ? '<span class="new-tag">NEW</span>' : ''}
+                <span class="icon">📚</span><h3>Notes</h3>
+            </div>
             <div class="nav-card" onclick="loadSection('videos')"><span class="icon">🎥</span><h3>Videos</h3></div>
             <div class="nav-card" onclick="loadSection('updates')"><span class="icon">🔔</span><h3>Updates</h3></div>
             <div class="nav-card" onclick="loadSection('tests')"><span class="icon">✍️</span><h3>Tests</h3></div>
@@ -34,6 +49,8 @@ function renderHome() {
 }
 
 function addWhatsAppButton() {
+    const oldBtn = document.querySelector('.whatsapp-float');
+    if (oldBtn) oldBtn.remove();
     const btn = document.createElement('a');
     btn.href = "https://wa.me/918638361876?text=Hello%20Pallab%20Sir...";
     btn.className = "whatsapp-float";
