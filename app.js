@@ -18,7 +18,6 @@ async function initApp() {
 
 function renderHome() {
     const container = document.getElementById('view-container');
-    // Shows 'NEW' badge if content.json was updated in the last 3 days
     const isNew = appData.lastUpdate && (new Date() - new Date(appData.lastUpdate)) / (1000 * 60 * 60 * 24) < 3;
     
     container.innerHTML = `
@@ -39,12 +38,11 @@ function renderHome() {
 }
 
 function addWhatsAppButton() {
-    // Remove any old button first to prevent duplicates
     const oldBtn = document.querySelector('.whatsapp-float');
     if (oldBtn) oldBtn.remove();
-
     const btn = document.createElement('a');
-    btn.href = "https://wa.me/918638361876?text=Hello%20Pallab%20Sir,%20I%20have%20a%20doubt...";
+    // REMEMBER: Change XXXXXXXXXX to your 10-digit number below
+    btn.href = "https://wa.me/918638361876?text=Hello%20Pallab%20Sir...";
     btn.className = "whatsapp-float";
     btn.target = "_blank";
     btn.innerHTML = "💬";
@@ -63,10 +61,7 @@ function renderVideoMenu() {
     const container = document.getElementById('view-container');
     const videos = appData.videos[currentClass]?.General_Science || [];
     container.innerHTML = `
-        <div class="section-header">
-            <button onclick="renderHome()" class="back-btn">← Home</button>
-            <h2>Video Lectures</h2>
-        </div>
+        <div class="section-header"><button onclick="renderHome()" class="back-btn">← Home</button><h2>Video Lectures</h2></div>
         <div class="class-toggle">
             <button class="${currentClass==='class9'?'active':''}" onclick="setVideoClass('class9')">Class 9</button>
             <button class="${currentClass==='class10'?'active':''}" onclick="setVideoClass('class10')">Class 10</button>
@@ -175,8 +170,7 @@ function viewTestSubject(subject) {
 function renderPlaceholder(name) {
     const container = document.getElementById('view-container');
     container.innerHTML = `<div class="section-header"><button onclick="renderHome()" class="back-btn">← Back</button></div>
-    <div class="coming-soon-box"><div class="loader-icon">⚙️</div><p>${name.toUpperCase()} Coming Soon</p></div>`;
+    <div class="coming-soon-box"><div class="loader-icon">⚙️</div><p>${name.toUpperCase()} Section Coming Soon</p></div>`;
 }
 
 window.onload = initApp;
-        
