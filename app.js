@@ -40,14 +40,15 @@ function loadSection(section) {
 
 function renderNotifications() {
     const container = document.getElementById('view-container');
-    const list = appData.notifications || [];
+    // Using slice() before reverse() ensures we don't break the original data order
+    const list = appData.notifications ? [...appData.notifications].reverse() : [];
     container.innerHTML = `
         <div class="section-header">
             <button onclick="renderHome()" class="back-btn">← Home</button>
             <h2>Notifications</h2>
         </div>
         <div class="pdf-list">
-            ${list.slice().reverse().map(n => `
+            ${list.map(n => `
                 <div class="nav-card pdf-card" style="flex-direction:column !important; align-items:flex-start !important;">
                     <div style="display:flex; justify-content:space-between; width:100%;">
                         <span class="badge ${n.type}">${n.type.toUpperCase()}</span>
@@ -86,6 +87,7 @@ function setClass(cls) { currentClass = cls; renderNotesMenu(); }
 
 function viewSubject(subject) {
     const container = document.getElementById('view-container');
+    // This logic ensures that 'Social_Science' looks for 'Social_Science' in your JSON
     const items = appData.notes[currentClass][subject] || [];
     container.innerHTML = `
         <div class="section-header">
@@ -102,8 +104,6 @@ function viewSubject(subject) {
         </div>
     `;
 }
-
-// --- TEST SECTION LOGIC ---
 
 function renderTestsMenu() {
     const container = document.getElementById('view-container');
