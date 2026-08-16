@@ -448,4 +448,133 @@ body {
     background: #ef4444;
     border-radius: 50%;
                                 }
+/* --- Notes View Styling --- */
+.view-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.back-home-btn {
+    background: rgba(15, 33, 64, 0.9);
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.view-title {
+    font-size: 1.2rem;
+    color: #facc15;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.class-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.class-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(13, 27, 54, 0.85);
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.class-btn.active {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.35);
+}
+
+.notes-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.note-card-item {
+    background: var(--card-bg);
+    border: 1.5px solid rgba(0, 210, 255, 0.25);
+    box-shadow: 0 0 12px rgba(0, 210, 255, 0.15);
+    border-radius: 16px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.note-icon-col {
+    font-size: 1.8rem;
+    color: #ef4444;
+}
+
+.note-details {
+    flex: 1;
+}
+
+.note-subject-tag {
+    font-size: 0.65rem;
+    background: rgba(0, 210, 255, 0.15);
+    color: var(--neon-blue);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.note-item-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+}
+
+.note-item-desc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.download-pdf-btn {
+    background: var(--neon-blue);
+    color: #030712;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 10px;
+    color: var(--text-secondary);
+}
+
+.empty-state i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    opacity: 0.5;
+    }
+    
     
