@@ -1,21 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="as">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>PRAGYANOM</title>
+    <title>প্ৰজ্ঞানম - Pragyanam</title>
+    
+    <!-- Google Fonts: অসমীয়া ফন্ট Hind Siliguri -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome আইকন -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div id="app">
-        <div id="view-container">
-            <div class="loader-box">
-                <h2>Connecting to PRAGYANOM...</h2>
-                <p>Please wait while we sync your lessons.</p>
+        <!-- Top App Bar -->
+        <header class="top-nav">
+            <button class="nav-icon-btn"><i class="fa-solid fa-bars"></i></button>
+            <div class="top-nav-right">
+                <div class="notif-wrapper">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="badge">৩</span>
+                </div>
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
             </div>
-        </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-container">
+            
+            <!-- Logo & Slogan Header -->
+            <section class="hero-section">
+                <div class="logo-glow-ring">
+                    <img src="logopng.webp" alt="প্ৰজ্ঞানম ল'গ'" class="main-logo" onerror="this.src='https://via.placeholder.com/100'">
+                </div>
+                <h1 class="brand-title">প্ৰজ্ঞানম</h1>
+                <p class="brand-tagline">জ্ঞানেই শক্তি • প্ৰগতিৰ মূল</p>
+                
+                <div class="quote-pill">
+                    <span class="quote-icon">“</span>
+                    <span class="quote-text">বিশ্বাস,কঠোৰ শ্ৰম আৰু অনুশীলন</span>
+                    <i class="fa-solid fa-graduation-cap grad-cap"></i>
+                </div>
+            </section>
+
+            <!-- 4 Main Cards Grid -->
+            <section class="action-grid">
+                <div class="action-card card-blue" id="btn-notes">
+                    <div class="card-icon-box"><i class="fa-solid fa-book-bookmark"></i></div>
+                    <div class="card-info">
+                        <h3>নোটছ</h3>
+                        <p>সকল বিষয়ৰ পূৰ্ণাংগ নোটছ</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right card-arrow"></i>
+                </div>
+
+                <div class="action-card card-purple" id="btn-videos">
+                    <div class="card-icon-box"><i class="fa-solid fa-film"></i></div>
+                    <div class="card-info">
+                        <h3>ভিডিঅ’ছ</h3>
+                        <p>বোধগম্য আৰু সহজ ভাষাত</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right card-arrow"></i>
+                </div>
+
+                <div class="action-card card-amber" id="btn-updates">
+                    <div class="card-icon-box"><i class="fa-solid fa-bell"></i></div>
+                    <div class="card-info">
+                        <h3>আপডেটছ</h3>
+                        <p>গুৰুত্বপূৰ্ণ খবৰ আৰু ঘোষণা</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right card-arrow"></i>
+                </div>
+
+                <div class="action-card card-cyan" id="btn-tests">
+                    <div class="card-icon-box"><i class="fa-solid fa-file-signature"></i></div>
+                    <div class="card-info">
+                        <h3>পৰীক্ষাৰ প্ৰস্তুতি</h3>
+                        <p>মক টেষ্ট, প্ৰশ্নোত্তৰ, টিপছ</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right card-arrow"></i>
+                </div>
+            </section>
+
+            <!-- Subject Grid -->
+            <section class="section-container">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <i class="fa-solid fa-graduation-cap section-icon"></i>
+                        <h2>বিষয়ভিত্তিক অধ্যয়ন</h2>
+                    </div>
+                    <a href="#all-subjects" class="see-all-btn">সকলো চাওক <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="subjects-row">
+                    <div class="subject-card sc-blue">
+                        <i class="fa-solid fa-flask-vial sub-icon"></i>
+                        <h4>বিজ্ঞান</h4>
+                        <span class="sub-class">Class 9-10</span>
+                    </div>
+                    <div class="subject-card sc-purple">
+                        <i class="fa-solid fa-square-root-variable sub-icon"></i>
+                        <h4>গণিত</h4>
+                        <span class="sub-class">Class 9-10</span>
+                    </div>
+                    <div class="subject-card sc-cyan">
+                        <i class="fa-solid fa-book-open sub-icon"></i>
+                        <h4>অসমীয়া</h4>
+                        <span class="sub-class">Class 9-10</span>
+                    </div>
+                    <div class="subject-card sc-amber">
+                        <i class="fa-solid fa-globe sub-icon"></i>
+                        <h4>ইংৰাজী</h4>
+                        <span class="sub-class">Class 9-10</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Counter Row -->
+            <section class="stats-row">
+                <div class="stat-item">
+                    <i class="fa-solid fa-users"></i>
+                    <div>
+                        <strong>৫০,০০০+</strong>
+                        <span>সন্তুষ্ট শিক্ষাৰ্থী</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <div>
+                        <strong>৫০০০+</strong>
+                        <span>পাঠ্য নোটছ</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <div>
+                        <strong>১০০০+</strong>
+                        <span>শিক্ষামূলক ভিডিঅ’</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Promotion Banner -->
+            <section class="promo-banner">
+                <div class="promo-content">
+                    <h3>প্ৰজ্ঞানমৰ বিশেষ প্ৰশিক্ষণ</h3>
+                    <p>বৰ্ড পৰীক্ষাত উত্তীৰ্ণ হ'বলৈ সম্পূৰ্ণ সহায়</p>
+                </div>
+                <button class="promo-cta-btn">এতিয়া চাওক <i class="fa-solid fa-arrow-right"></i></button>
+            </section>
+
+        </main>
+
+        <!-- Persistent Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="#home" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>হোম</span>
+            </a>
+            <a href="#notes" class="nav-item">
+                <i class="fa-solid fa-book"></i>
+                <span>নোটছ</span>
+            </a>
+            <a href="#videos" class="nav-item">
+                <i class="fa-solid fa-circle-play"></i>
+                <span>ভিডিঅ’ছ</span>
+            </a>
+            <a href="#updates" class="nav-item">
+                <div class="nav-icon-dot">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="dot"></span>
+                </div>
+                <span>ঘোষণা</span>
+            </a>
+            <a href="#tests" class="nav-item">
+                <i class="fa-solid fa-list-check"></i>
+                <span>পৰীক্ষা</span>
+            </a>
+        </nav>
     </div>
+
     <script src="app.js"></script>
 </body>
-</html>
+    </html>
+    
