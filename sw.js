@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pragyanom-v7'; // সংস্কৰণ v3 ৰ পৰা v5 কৰা হ'ল
+const CACHE_NAME = 'pragyanom-v8';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -19,7 +19,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate Event - Cleans up old cache (Very Important)
+// Activate Event - Cleans up old cache
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
