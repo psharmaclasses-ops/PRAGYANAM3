@@ -576,5 +576,50 @@ body {
     margin-bottom: 10px;
     opacity: 0.5;
     }
+/* Filter Scroll Pills */
+.filter-scroll {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    scrollbar-width: none;
+}
+.filter-scroll::-webkit-scrollbar {
+    display: none;
+}
+.filter-pill {
+    background: rgba(13, 27, 54, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.filter-pill.active {
+    background: var(--neon-blue);
+    color: #030712;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+}
+
+/* Video & Test Theme Customizations */
+.video-item { border-color: rgba(157, 78, 221, 0.35); }
+.video-icon { color: var(--neon-purple); }
+.video-tag { background: rgba(157, 78, 221, 0.2); color: #d8b4fe; }
+.video-btn { background: var(--neon-purple); color: white; }
+
+.test-item { border-color: rgba(16, 185, 129, 0.35); }
+.test-icon { color: #10b981; }
+.test-tag { background: rgba(16, 185, 129, 0.2); color: #6ee7b7; }
+.test-btn { background: #10b981; color: #030712; }
+
+.notif-item { border-color: rgba(245, 158, 11, 0.35); }
+.notif-icon { color: var(--neon-amber); }
+.notif-tag { background: rgba(245, 158, 11, 0.2); color: #fde68a; }
+
     
     
