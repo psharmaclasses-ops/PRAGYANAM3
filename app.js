@@ -1,178 +1,112 @@
-let appData = null;
-let currentClass = 'class10';
-
+// Register Service Worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js');
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('SW Registered!', reg))
+            .catch(err => console.log('SW Registration Failed!', err));
+    });
 }
 
-async function initApp() {
+// Global App State & Data
+let appData = null;
+
+// Load Content Data
+async function loadContentData() {
     try {
-        const response = await fetch('data/content.json');
-        if (!response.ok) throw new Error('Network response was not ok');
+        const response = await fetch('./data/content.json');
         appData = await response.json();
-        renderHome();
-        addWhatsAppButton();
-    } catch (e) {
-        document.getElementById('view-container').innerHTML = `
-            <div style="padding:20px; text-align:center; color:white;">
-                <h3>⚠️ Connection Error</h3>
-                <p>Please check your internet or clear browser cache.</p>
-            </div>`;
+        console.log('Data loaded successfully');
+    } catch (error) {
+        console.error('Error loading content.json:', error);
     }
 }
 
-function renderHome() {
-    const container = document.getElementById('view-container');
-    const isNew = appData.lastUpdate && (new Date() - new Date(appData.lastUpdate)) / (1000 * 60 * 60 * 24) < 3;
+// Navigation / View Handler
+function navigateTo(section) {
+    console.log(`Navigating to: ${section}`);
     
-    container.innerHTML = `
-        <div class="welcome-text" style="text-align: center; margin-bottom: 30px;">
-            <img src="./logopng.webp" alt="Logo" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 10px; display: block; border: 3px solid #38bdf8; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);">
-            
-            <h1 style="letter-spacing: 5px; color: #f8fafc; font-size: 1.8rem; margin-bottom: 20px; text-transform: uppercase; font-weight: bold;">PRAGYANOM</h1>
-            
-            <h2 id="greeting" style="color: #38bdf8; font-size: 1.4rem; margin-top: 10px;">Namaste, Student!</h2>
-            <p class="quote" style="font-style: italic; opacity: 0.8; font-size: 0.9rem;">"Gateway to Excellence"</p>
-        </div>
+    // Update bottom nav active state
+    document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${section}`) {
+            item.classList.add('active');
+        }
+    });
 
-        <div class="nav-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-            <div class="nav-card" onclick="loadSection('notes')">
-                ${isNew ? '<span class="new-tag">NEW</span>' : ''}
-                <span class="icon">📚</span><h3>Notes</h3>
-            </div>
-            <div class="nav-card" onclick="loadSection('videos')"><span class="icon">🎥</span><h3>Videos</h3></div>
-            <div class="nav-card" onclick="loadSection('updates')"><span class="icon">🔔</span><h3>Updates</h3></div>
-            <div class="nav-card" onclick="loadSection('tests')"><span class="icon">✍️</span><h3>Tests</h3></div>
-        </div>
-    `;
+    // Action based on clicked module
+    switch(section) {
+        case 'notes':
+            alert('নোটছ শাখা সোনকালে উপলব্ধ হ’ব।');
+            break;
+        case 'videos':
+            alert('ভিডিঅ’ শাখা সোনকালে উপলব্ধ হ’ব।');
+            break;
+        case 'updates':
+            alert('আপডেটছ: কোনো নতুন জাননী নাই।');
+            break;
+        case 'tests':
+            alert('পৰীক্ষাৰ প্ৰস্তুতি শাখা সোনকালে উপলব্ধ হ’ব।');
+            break;
+        case 'home':
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            break;
+        default:
+            console.log('Default View');
+    }
 }
 
-function addWhatsAppButton() {
-    const oldBtn = document.querySelector('.whatsapp-float');
-    if (oldBtn) oldBtn.remove();
-    const btn = document.createElement('a');
-    btn.href = "https://wa.me/918638361876?text=Hello%20Pallab%20Sir...";
-    btn.className = "whatsapp-float";
-    btn.target = "_blank";
-    btn.innerHTML = "💬";
-    document.body.appendChild(btn);
+// Subject Click Handler
+function openSubject(subjectName) {
+    alert(`${subjectName} শাখা খোলক (Class 9-10)`);
 }
 
-function loadSection(section) {
-    if (section === 'notes') renderNotesMenu();
-    else if (section === 'updates') renderNotifications();
-    else if (section === 'tests') renderTestsMenu();
-    else if (section === 'videos') renderVideoMenu();
-}
+// Setup Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    loadContentData();
 
-function renderNotesMenu() {
-    const container = document.getElementById('view-container');
-    container.innerHTML = `
-        <div class="section-header"><button onclick="renderHome()" class="back-btn">← Home</button><h2>Study Notes</h2></div>
-        <div class="class-toggle">
-            <button class="${currentClass==='class9'?'active':''}" onclick="setClass('class9')">Class 9</button>
-            <button class="${currentClass==='class10'?'active':''}" onclick="setClass('class10')">Class 10</button>
-        </div>
-        <div class="nav-grid">
-            ${['English', 'General_Science', 'General_Mathematics', 'Assamese', 'Social_Science'].map(sub => `
-                <div class="nav-card small" onclick="viewSubject('${sub}')"><h3>${sub.replace('_', ' ')}</h3></div>
-            `).join('')}
-        </div>
-    `;
-}
+    // 1. Four Main Cards Click Listeners
+    const btnNotes = document.getElementById('btn-notes');
+    const btnVideos = document.getElementById('btn-videos');
+    const btnUpdates = document.getElementById('btn-updates');
+    const btnTests = document.getElementById('btn-tests');
 
-function setClass(cls) { currentClass = cls; renderNotesMenu(); }
+    if (btnNotes) btnNotes.addEventListener('click', () => navigateTo('notes'));
+    if (btnVideos) btnVideos.addEventListener('click', () => navigateTo('videos'));
+    if (btnUpdates) btnUpdates.addEventListener('click', () => navigateTo('updates'));
+    if (btnTests) btnTests.addEventListener('click', () => navigateTo('tests'));
 
-function viewSubject(subject) {
-    const container = document.getElementById('view-container');
-    const items = appData.notes[currentClass][subject] || [];
-    container.innerHTML = `
-        <div class="section-header"><button onclick="renderNotesMenu()" class="back-btn">← Back</button><h2 style="margin-top:10px">${subject.replace('_', ' ')}</h2></div>
-        <div class="pdf-list">
-            ${items.length > 0 ? items.map(item => `
-                <div class="nav-card pdf-card">
-                    <h3 style="font-size:0.9rem">${item.title}</h3>
-                    <a href="${item.file}" target="_blank" class="view-btn">View PDF</a>
-                </div>
-            `).join('') : '<p class="coming-soon">Content coming soon!</p>'}
-        </div>
-    `;
-}
+    // 2. Subject Cards Click Listeners
+    const subjectCards = document.querySelectorAll('.subject-card');
+    subjectCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.querySelector('h4')?.innerText || 'বিষয়';
+            openSubject(title);
+        });
+    });
 
-function renderNotifications() {
-    const container = document.getElementById('view-container');
-    const list = appData.notifications ? [...appData.notifications].reverse() : [];
-    container.innerHTML = `
-        <div class="section-header"><button onclick="renderHome()" class="back-btn">← Home</button><h2>Notifications</h2></div>
-        <div class="pdf-list">
-            ${list.map(n => `
-                <div class="nav-card pdf-card" style="flex-direction:column !important; align-items:flex-start !important;">
-                    <div style="display:flex; justify-content:space-between; width:100%;">
-                        <span class="badge ${n.type}">${n.type.toUpperCase()}</span>
-                        <small style="color:rgba(255,255,255,0.4)">${n.timestamp}</small>
-                    </div>
-                    <h3 style="margin-top:10px">${n.title}</h3>
-                    <p style="font-size:0.85rem; color:rgba(255,255,255,0.7); margin-top:5px;">${n.message}</p>
-                </div>
-            `).join('')}
-        </div>
-    `;
-}
+    // 3. Bottom Nav Click Listeners
+    const navItems = document.querySelectorAll('.bottom-nav .nav-item');
+    navItems.forEach(nav => {
+        nav.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = nav.getAttribute('href').replace('#', '');
+            navigateTo(target);
+        });
+    });
 
-function renderTestsMenu() {
-    const container = document.getElementById('view-container');
-    container.innerHTML = `
-        <div class="section-header"><button onclick="renderHome()" class="back-btn">← Home</button><h2>Practice Tests</h2></div>
-        <div class="class-toggle">
-            <button class="${currentClass==='class9'?'active':''}" onclick="setTestClass('class9')">Class 9</button>
-            <button class="${currentClass==='class10'?'active':''}" onclick="setTestClass('class10')">Class 10</button>
-        </div>
-        <div class="nav-grid">
-            ${['English', 'General_Science', 'General_Mathematics'].map(sub => `
-                <div class="nav-card small" onclick="viewTestSubject('${sub}')"><h3>${sub.replace('_', ' ')}</h3></div>
-            `).join('')}
-        </div>
-    `;
-}
+    // 4. Promo Banner Button
+    const promoBtn = document.querySelector('.promo-cta-btn');
+    if (promoBtn) {
+        promoBtn.addEventListener('click', () => {
+            alert('প্ৰজ্ঞানমৰ বিশেষ প্ৰশিক্ষণলৈ স্বাগতম!');
+        });
+    }
 
-function setTestClass(cls) { currentClass = cls; renderTestsMenu(); }
-
-function viewTestSubject(subject) {
-    const container = document.getElementById('view-container');
-    const items = appData.tests[currentClass][subject] || [];
-    container.innerHTML = `
-        <div class="section-header"><button onclick="renderTestsMenu()" class="back-btn">← Back</button><h2 style="margin-top:10px">${subject.replace('_', ' ')} Tests</h2></div>
-        <div class="pdf-list">
-            ${items.length > 0 ? items.map(item => `
-                <div class="nav-card pdf-card">
-                    <h3 style="font-size:0.9rem">${item.title}</h3>
-                    <a href="${item.link}" target="_blank" class="view-btn">Start Test</a>
-                </div>
-            `).join('') : '<p class="coming-soon">No tests available yet!</p>'}
-        </div>
-    `;
-}
-
-function renderVideoMenu() {
-    const container = document.getElementById('view-container');
-    const videos = appData.videos[currentClass]?.General_Science || [];
-    container.innerHTML = `
-        <div class="section-header"><button onclick="renderHome()" class="back-btn">← Home</button><h2>Video Lectures</h2></div>
-        <div class="class-toggle">
-            <button class="${currentClass==='class9'?'active':''}" onclick="setVideoClass('class9')">Class 9</button>
-            <button class="${currentClass==='class10'?'active':''}" onclick="setVideoClass('class10')">Class 10</button>
-        </div>
-        <div class="pdf-list">
-            ${videos.length > 0 ? videos.map(v => `
-                <div class="nav-card pdf-card" style="flex-direction:column !important; align-items:flex-start !important;">
-                    <iframe width="100%" height="200" src="${v.file}" frameborder="0" allowfullscreen style="border-radius:10px; margin-bottom:10px;"></iframe>
-                    <h3>${v.title}</h3>
-                </div>
-            `).join('') : '<p class="coming-soon">Videos coming soon!</p>'}
-        </div>
-    `;
-}
-
-function setVideoClass(cls) { currentClass = cls; renderVideoMenu(); }
-
-window.onload = initApp;
+    // 5. Notification & Profile Click
+    const notifBtn = document.querySelector('.notif-wrapper');
+    if (notifBtn) {
+        notifBtn.addEventListener('click', () => {
+            alert('আপোনাৰ ৩ টা নতুন জাননী আছে।');
+        });
+    }
+});
