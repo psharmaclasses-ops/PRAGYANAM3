@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pragyanom-v6'; // সংস্কৰণ v3 ৰ পৰা v5 কৰা হ'ল
+const CACHE_NAME = 'pragyanom-v7'; // সংস্কৰণ v3 ৰ পৰা v5 কৰা হ'ল
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
