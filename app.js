@@ -21,19 +21,26 @@ const subjectDisplayNames = {
     'Assamese': 'অসমীয়া'
 };
 
-// Fetch content.json
+function convertToAssameseNumber(num) {
+    const assameseDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+    return num.toString().split('').map(d => assameseDigits[d] || d).join('');
+}
+
+// Load Content Data
 async function loadContentData() {
     try {
         const response = await fetch('./data/content.json');
         appData = await response.json();
         console.log('App Data loaded successfully:', appData);
         updateNotificationBadge();
+        renderHomeView();
     } catch (error) {
         console.error('Error loading content.json:', error);
+        renderHomeView();
     }
 }
 
-// Update Notification Badge Count
+// Update Top Notification Badge
 function updateNotificationBadge() {
     if (appData && appData.notifications) {
         const badge = document.querySelector('.notif-wrapper .badge');
@@ -43,20 +50,153 @@ function updateNotificationBadge() {
     }
 }
 
-function convertToAssameseNumber(num) {
-    const assameseDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
-    return num.toString().split('').map(d => assameseDigits[d] || d).join('');
+// Update Bottom Nav Status
+function updateBottomNavState(activeTab) {
+    document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('data-tab') === activeTab) {
+            item.classList.add('active');
+        }
+    });
 }
 
-// --- VIEW: NOTES ---
+// --- 1. HOME VIEW ---
+function renderHomeView() {
+    const mainContainer = document.getElementById('main-view');
+    if (!mainContainer) return;
+
+    mainContainer.innerHTML = `
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="logo-glow-ring">
+                <img src="logopng.webp" alt="প্ৰজ্ঞানম ল'গ'" class="main-logo" onerror="this.src='https://via.placeholder.com/100/0f172a/00d2ff?text=PRAGYANAM'">
+            </div>
+            <h1 class="brand-title">প্ৰজ্ঞানম</h1>
+            <p class="brand-tagline">জ্ঞানেই শক্তি • প্ৰগতিৰ মূল</p>
+            
+            <div class="quote-pill">
+                <span class="quote-icon">“</span>
+                <span class="quote-text">বিশ্বাস, কঠোৰ শ্ৰম আৰু অনুশীলন</span>
+                <i class="fa-solid fa-graduation-cap grad-cap"></i>
+            </div>
+        </section>
+
+        <!-- 4 Main Cards -->
+        <section class="action-grid">
+            <div class="action-card card-blue" id="btn-notes">
+                <div class="card-icon-box"><i class="fa-solid fa-book-bookmark"></i></div>
+                <div class="card-info">
+                    <h3>নোটছ</h3>
+                    <p>সকল বিষয়ৰ পূৰ্ণাংগ নোটছ</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </div>
+
+            <div class="action-card card-purple" id="btn-videos">
+                <div class="card-icon-box"><i class="fa-solid fa-film"></i></div>
+                <div class="card-info">
+                    <h3>ভিডিঅ’ছ</h3>
+                    <p>বোধগম্য আৰু সহজ ভাষাত</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </div>
+
+            <div class="action-card card-amber" id="btn-updates">
+                <div class="card-icon-box"><i class="fa-solid fa-bell"></i></div>
+                <div class="card-info">
+                    <h3>আপডেটছ</h3>
+                    <p>গুৰুত্বপূৰ্ণ খবৰ আৰু ঘোষণা</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </div>
+
+            <div class="action-card card-cyan" id="btn-tests">
+                <div class="card-icon-box"><i class="fa-solid fa-file-signature"></i></div>
+                <div class="card-info">
+                    <h3>পৰীক্ষাৰ প্ৰস্তুতি</h3>
+                    <p>মক টেষ্ট, প্ৰশ্নোত্তৰ, টিপছ</p>
+                </div>
+                <i class="fa-solid fa-chevron-right card-arrow"></i>
+            </div>
+        </section>
+
+        <!-- Subject Grid -->
+        <section class="section-container">
+            <div class="section-header">
+                <div class="section-title-wrap">
+                    <i class="fa-solid fa-graduation-cap section-icon"></i>
+                    <h2>বিষয়ভিত্তিক অধ্যয়ন</h2>
+                </div>
+                <button class="see-all-btn" id="btn-see-all">সকলো চাওক <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="subjects-row">
+                <div class="subject-card sc-blue" data-sub="General_Science">
+                    <i class="fa-solid fa-flask-vial sub-icon"></i>
+                    <h4>বিজ্ঞান</h4>
+                    <span class="sub-class">Class 9-10</span>
+                </div>
+                <div class="subject-card sc-purple" data-sub="General_Mathematics">
+                    <i class="fa-solid fa-square-root-variable sub-icon"></i>
+                    <h4>গণিত</h4>
+                    <span class="sub-class">Class 9-10</span>
+                </div>
+                <div class="subject-card sc-cyan" data-sub="Assamese">
+                    <i class="fa-solid fa-book-open sub-icon"></i>
+                    <h4>অসমীয়া</h4>
+                    <span class="sub-class">Class 9-10</span>
+                </div>
+                <div class="subject-card sc-amber" data-sub="English">
+                    <i class="fa-solid fa-globe sub-icon"></i>
+                    <h4>ইংৰাজী</h4>
+                    <span class="sub-class">Class 9-10</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotion Banner -->
+        <section class="promo-banner">
+            <div class="promo-content">
+                <h3>প্ৰজ্ঞানমৰ বিশেষ প্ৰশিক্ষণ</h3>
+                <p>বৰ্ড পৰীক্ষাত উত্তীৰ্ণ হ'বলৈ সম্পূৰ্ণ সহায়</p>
+            </div>
+            <button class="promo-cta-btn" id="btn-promo">এতিয়া চাওক <i class="fa-solid fa-arrow-right"></i></button>
+        </section>
+    `;
+
+    updateBottomNavState('home');
+    attachHomeEventListeners();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Attach Event Listeners to Home Elements
+function attachHomeEventListeners() {
+    document.getElementById('btn-notes')?.addEventListener('click', () => renderNotesView('all'));
+    document.getElementById('btn-videos')?.addEventListener('click', () => renderVideosView());
+    document.getElementById('btn-updates')?.addEventListener('click', () => renderNotificationsView());
+    document.getElementById('btn-tests')?.addEventListener('click', () => renderTestsView());
+    document.getElementById('btn-see-all')?.addEventListener('click', () => renderNotesView('all'));
+
+    document.querySelectorAll('.subjects-row .subject-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const sub = card.getAttribute('data-sub');
+            renderNotesView(sub);
+        });
+    });
+
+    document.getElementById('btn-promo')?.addEventListener('click', () => {
+        renderNotesView('all');
+    });
+}
+
+// --- 2. NOTES VIEW ---
 function renderNotesView(targetSubject = 'all') {
     currentSubjectFilter = targetSubject;
-    const mainContainer = document.querySelector('.main-container');
+    const mainContainer = document.getElementById('main-view');
     if (!mainContainer || !appData) return;
 
     const classNotes = (appData.notes && appData.notes[currentClassKey]) || {};
     
-    // Build Subject Filters Bar
     let subjectFiltersHtml = `
         <div class="filter-scroll">
             <button class="filter-pill ${currentSubjectFilter === 'all' ? 'active' : ''}" onclick="filterBySubject('all')">সকলো</button>
@@ -68,7 +208,6 @@ function renderNotesView(targetSubject = 'all') {
         </div>
     `;
 
-    // Collect Notes based on selected subject
     let allItems = [];
     Object.keys(classNotes).forEach(subKey => {
         if (currentSubjectFilter === 'all' || currentSubjectFilter === subKey) {
@@ -86,20 +225,17 @@ function renderNotesView(targetSubject = 'all') {
     let listHtml = '';
     if (allItems.length > 0) {
         allItems.forEach(item => {
-            // Check if drive link needs direct preview
             const fileUrl = item.file.includes('drive.google.com/uc?id=') 
                 ? item.file.replace('uc?id=', 'file/d/') + '/view' 
                 : item.file;
 
             listHtml += `
                 <div class="note-card-item">
-                    <div class="note-icon-col">
-                        <i class="fa-solid fa-file-pdf"></i>
-                    </div>
+                    <div class="note-icon-col"><i class="fa-solid fa-file-pdf"></i></div>
                     <div class="note-details">
                         <span class="note-subject-tag">${item.subjectAssamese}</span>
                         <h4 class="note-item-title">${item.title}</h4>
-                        <p class="note-item-desc">বিনামূলীয়া পিডিএফ ফাইল</p>
+                        <p class="note-item-desc">বিনামূলীয়া পিডিএফ নোটছ</p>
                     </div>
                     <a href="${fileUrl}" target="_blank" rel="noopener noreferrer" class="download-pdf-btn">
                         <i class="fa-solid fa-eye"></i> চাওক
@@ -140,9 +276,9 @@ function renderNotesView(targetSubject = 'all') {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// --- VIEW: VIDEOS ---
+// --- 3. VIDEOS VIEW ---
 function renderVideosView() {
-    const mainContainer = document.querySelector('.main-container');
+    const mainContainer = document.getElementById('main-view');
     if (!mainContainer || !appData) return;
 
     const classVideos = (appData.videos && appData.videos[currentClassKey]) || {};
@@ -163,9 +299,7 @@ function renderVideosView() {
         allVideos.forEach(item => {
             listHtml += `
                 <div class="note-card-item video-item">
-                    <div class="note-icon-col video-icon">
-                        <i class="fa-solid fa-circle-play"></i>
-                    </div>
+                    <div class="note-icon-col video-icon"><i class="fa-solid fa-circle-play"></i></div>
                     <div class="note-details">
                         <span class="note-subject-tag video-tag">${item.subjectAssamese}</span>
                         <h4 class="note-item-title">${item.title}</h4>
@@ -208,9 +342,9 @@ function renderVideosView() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// --- VIEW: TESTS ---
+// --- 4. TESTS VIEW ---
 function renderTestsView() {
-    const mainContainer = document.querySelector('.main-container');
+    const mainContainer = document.getElementById('main-view');
     if (!mainContainer || !appData) return;
 
     const classTests = (appData.tests && appData.tests[currentClassKey]) || {};
@@ -231,9 +365,7 @@ function renderTestsView() {
         allTests.forEach(item => {
             listHtml += `
                 <div class="note-card-item test-item">
-                    <div class="note-icon-col test-icon">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </div>
+                    <div class="note-icon-col test-icon"><i class="fa-solid fa-pen-to-square"></i></div>
                     <div class="note-details">
                         <span class="note-subject-tag test-tag">${item.subjectAssamese}</span>
                         <h4 class="note-item-title">${item.title}</h4>
@@ -276,9 +408,9 @@ function renderTestsView() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// --- VIEW: NOTIFICATIONS / UPDATES ---
+// --- 5. NOTIFICATIONS / UPDATES VIEW ---
 function renderNotificationsView() {
-    const mainContainer = document.querySelector('.main-container');
+    const mainContainer = document.getElementById('main-view');
     if (!mainContainer || !appData) return;
 
     const notifs = appData.notifications || [];
@@ -288,9 +420,7 @@ function renderNotificationsView() {
         notifs.forEach(n => {
             notifHtml += `
                 <div class="note-card-item notif-item">
-                    <div class="note-icon-col notif-icon">
-                        <i class="fa-solid fa-bullhorn"></i>
-                    </div>
+                    <div class="note-icon-col notif-icon"><i class="fa-solid fa-bullhorn"></i></div>
                     <div class="note-details">
                         <span class="note-subject-tag notif-tag">${n.timestamp || ''}</span>
                         <h4 class="note-item-title">${n.title}</h4>
@@ -320,7 +450,7 @@ function renderNotificationsView() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Global filter / Switch functions
+// Global Switch / Filter Handlers
 window.switchClass = function(clsKey, currentView) {
     currentClassKey = clsKey;
     if (currentView === 'notes') renderNotesView(currentSubjectFilter);
@@ -332,54 +462,26 @@ window.filterBySubject = function(subKey) {
     renderNotesView(subKey);
 };
 
-window.renderHomeView = function() {
-    window.location.reload();
-};
+window.renderHomeView = renderHomeView;
 
-function updateBottomNavState(activeTab) {
-    document.querySelectorAll('.bottom-nav .nav-item').forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('href') === `#${activeTab}`) {
-            item.classList.add('active');
-        }
+// Global App Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    loadContentData();
+
+    // Top Bar Buttons
+    document.getElementById('btn-top-notif')?.addEventListener('click', () => renderNotificationsView());
+    document.getElementById('btn-top-profile')?.addEventListener('click', () => {
+        alert('প্ৰজ্ঞানম শিক্ষাৰ্থী প্ৰফাইল শীঘ্ৰেই উপলব্ধ হ’ব।');
     });
-}
-
-// Setup Event Listeners
-document.addEventListener('DOMContentLoaded', async () => {
-    await loadContentData();
-
-    // 1. Four Main Cards
-    const btnNotes = document.getElementById('btn-notes');
-    const btnVideos = document.getElementById('btn-videos');
-    const btnUpdates = document.getElementById('btn-updates');
-    const btnTests = document.getElementById('btn-tests');
-
-    if (btnNotes) btnNotes.addEventListener('click', () => renderNotesView('all'));
-    if (btnVideos) btnVideos.addEventListener('click', () => renderVideosView());
-    if (btnUpdates) btnUpdates.addEventListener('click', () => renderNotificationsView());
-    if (btnTests) btnTests.addEventListener('click', () => renderTestsView());
-
-    // 2. Notifications Bell Top Icon
-    const notifTopBtn = document.querySelector('.notif-wrapper');
-    if (notifTopBtn) notifTopBtn.addEventListener('click', () => renderNotificationsView());
-
-    // 3. Subject Grid Click Listeners
-    const subCards = document.querySelectorAll('.subjects-row .subject-card');
-    subCards.forEach((card, index) => {
-        card.addEventListener('click', () => {
-            const subjectMap = ['General_Science', 'General_Mathematics', 'Assamese', 'English'];
-            const targetSubject = subjectMap[index] || 'all';
-            renderNotesView(targetSubject);
-        });
+    document.getElementById('btn-hamburger')?.addEventListener('click', () => {
+        alert('প্ৰজ্ঞানম মেনু (Menu)');
     });
 
-    // 4. Bottom Nav Bar Items
-    const navItems = document.querySelectorAll('.bottom-nav .nav-item');
-    navItems.forEach(nav => {
+    // Bottom Navigation Items
+    document.querySelectorAll('.bottom-nav .nav-item').forEach(nav => {
         nav.addEventListener('click', (e) => {
             e.preventDefault();
-            const target = nav.getAttribute('href').replace('#', '');
+            const target = nav.getAttribute('data-tab');
             if (target === 'home') renderHomeView();
             else if (target === 'notes') renderNotesView('all');
             else if (target === 'videos') renderVideosView();
@@ -388,4 +490,4 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 });
-                            
+        
