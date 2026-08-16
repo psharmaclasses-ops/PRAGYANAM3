@@ -69,7 +69,7 @@ function renderHomeView() {
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="logo-glow-ring">
-                <img src="logopng.webp" alt="প্ৰজ্ঞানম ল'গ'" class="main-logo" onerror="this.src='https://via.placeholder.com/100/0f172a/00d2ff?text=PRAGYANAM'">
+                <img src="logopng.webp?v=1" alt="প্ৰজ্ঞানম ল'গ'" class="main-logo" onerror="this.src='https://via.placeholder.com/100/0f172a/00d2ff?text=PRAGYANAM'">
             </div>
             <h1 class="brand-title">প্ৰজ্ঞানম</h1>
             <p class="brand-tagline">জ্ঞানেই শক্তি • প্ৰগতিৰ মূল</p>
@@ -490,4 +490,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-        
