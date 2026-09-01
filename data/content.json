@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-04-16",
+  "lastUpdate": "2026-09-01",
   "notifications": [
     {
       "id": 1,
@@ -14,6 +14,13 @@
       "message": "Assamese and Social Science notes are now available.",
       "type": "info",
       "timestamp": "2026-04-16"
+    },
+    {
+      "id": 6,
+      "title": "নতুন পাঠ্যৰ টোকা সংযোজন কৰা হৈছে! 📚✨",
+      "message": "দশম শ্ৰেণীৰ গণিত আৰু সাধাৰণ বিজ্ঞানৰ নতুন অধ্যায়সমূহৰ টোকা উপলব্ধ কৰা হৈছে।",
+      "type": "info",
+      "timestamp": "2026-09-01"
     }
   ],
   "notes": {
@@ -33,10 +40,19 @@
         { "title": "Transformation of Sentences", "file": "https://drive.google.com/uc?id=1uAMhQ4SzccbniQIR0_YNFRXQnu-GU5x4", "status": "free" }
       ],
       "General_Science": [
-        { "title": "Science Chapter 1", "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F", "status": "free" },
-        { "title": "Science Chapter 5", "file": "https://drive.google.com/uc?id=1T_sMOgLrxCyIhK-9qvqrUhdKh7qUaNyG", "status": "free" }
+        { "title": "ৰাসায়নিক বিক্ৰিয়া আৰু সমীকৰণ", "file": "https://drive.google.com/uc?id=1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F", "status": "free" },
+        { "title": "জীৱন প্ৰক্ৰিয়া", "file": "https://drive.google.com/uc?id=1T_sMOgLrxCyIhK-9qvqrUhdKh7qUaNyG", "status": "free" },
+        { "title": "এছিড, ক্ষাৰক আৰু লৱণ", "file": "https://drive.google.com/uc?id=18Wyfs3-0qqRm-OV0Rse8zyzNXyy89R5Q", "status": "free" },
+        { "title": "ধাতু আৰু অধাতু", "file": "https://drive.google.com/uc?id=1CjZvT4hhaZZJPuBCLNIdpAGC7ODpyzcG", "status": "free" },
+        { "title": "কাৰ্বন আৰু তাৰ যৌগ", "file": "https://drive.google.com/uc?id=1Kro5HYwiXkdx0a9PZtNuOsrRxnuNAqAi", "status": "free" },
+        { "title": "নিয়ন্ত্ৰণ আৰু সমন্বয়", "file": "https://drive.google.com/uc?id=1LY6Cf9P3eukFNpI72zayA2s3opL-rk1M", "status": "free" }
       ],
-      "General_Mathematics": [],
+      "General_Mathematics": [
+        { "title": "বাস্তৱ সংখ্যা", "file": "https://drive.google.com/uc?id=1rvKLQpRESEIXN_urIC9piJ1l6A7JdzpE", "status": "free" },
+        { "title": "বহুপদ", "file": "https://drive.google.com/uc?id=1-id7gbZIA40wxrF6M9_JPRNU0vCxeDu6", "status": "free" },
+        { "title": "দুটা চলকত ৰৈখিক সমীকৰণৰ যোৰ", "file": "https://drive.google.com/uc?id=1kexOHjf-_rtZmhOhspNjaR6JUMYG23zN", "status": "free" },
+        { "title": "দ্বিঘাত সমীকৰণ", "file": "https://drive.google.com/uc?id=1RRcnyn--qArAUHZAnWG1zpIipLywSFED", "status": "free" }
+      ],
       "Social_Science": [
         { "title": "বংগ বিভাজন আৰু স্বদেশী আন্দোলন", "file": "https://drive.google.com/uc?id=1Ynl_M7gEjbWgNiuhrdzBmnS_ULR5t9lU", "status": "free" }
       ],
