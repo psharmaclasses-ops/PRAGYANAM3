@@ -1,5 +1,5 @@
-{
-  "lastUpdate": "2026-09-01",
+  {
+  "lastUpdate": "2026-09-09",
   "notifications": [
     {
       "id": 1,
@@ -18,9 +18,9 @@
     {
       "id": 6,
       "title": "নতুন পাঠ্যৰ টোকা সংযোজন কৰা হৈছে! 📚✨",
-      "message": "দশম শ্ৰেণীৰ গণিত আৰু সাধাৰণ বিজ্ঞানৰ নতুন অধ্যায়সমূহৰ টোকা উপলব্ধ কৰা হৈছে।",
+      "message": "দশম শ্ৰেণীৰ গণিত, বিজ্ঞান, অসমীয়া আৰু সমাজ বিজ্ঞানৰ নতুন অধ্যায়সমূহ আৰু অনলাইন পৰীক্ষা উপলব্ধ কৰা হৈছে।",
       "type": "info",
-      "timestamp": "2026-09-01"
+      "timestamp": "2026-09-09"
     }
   ],
   "notes": {
@@ -40,43 +40,47 @@
         { "title": "Transformation of Sentences", "file": "https://drive.google.com/file/d/1uAMhQ4SzccbniQIR0_YNFRXQnu-GU5x4/preview", "status": "free" }
       ],
       "General_Science": [
-        { "title": "ৰাসায়নিক বিক্ৰিয়া আৰু সমীকৰণ", "file": "https://drive.google.com/file/d/1fmEUqtgui9KFU6VYrqet-bVSh1NOQR3F/preview", "status": "free" },
-        { "title": "জীৱন প্ৰক্ৰিয়া", "file": "https://drive.google.com/file/d/1T_sMOgLrxCyIhK-9qvqrUhdKh7qUaNyG/preview", "status": "free" },
-        { "title": "এছিড, ক্ষাৰক আৰু লৱণ", "file": "https://drive.google.com/file/d/18Wyfs3-0qqRm-OV0Rse8zyzNXyy89R5Q/preview", "status": "free" },
-        { "title": "ধাতু আৰু অধাতু", "file": "https://drive.google.com/file/d/1CjZvT4hhaZZJPuBCLNIdpAGC7ODpyzcG/preview", "status": "free" },
-        { "title": "কাৰ্বন আৰু তাৰ যৌগ", "file": "https://drive.google.com/file/d/1Kro5HYwiXkdx0a9PZtNuOsrRxnuNAqAi/preview", "status": "free" },
-        { "title": "নিয়ন্ত্ৰণ আৰু সমন্বয়", "file": "https://drive.google.com/file/d/1LY6Cf9P3eukFNpI72zayA2s3opL-rk1M/preview", "status": "free" }
+        { "title": "মৌলৰ পৰ্যাবৃত্ত শ্ৰেণীবিভাজন", "file": "https://drive.google.com/file/d/1-id7gbZIA40wxrF6M9_JPRNU0vCxeDu6/preview", "status": "free" },
+        { "title": "ৰাসায়নিক বিক্ৰিয়া আৰু সমীকৰণ", "file": "https://drive.google.com/file/d/1rvKLQpRESEIXN_urIC9piJ1l6A7JdzpE/preview", "status": "free" },
+        { "title": "জীৱনপ্ৰক্ৰিয়া", "file": "https://drive.google.com/file/d/1kexOHjf-_rtZmhOhspNjaR6JUMYG23zN/preview", "status": "free" }
       ],
       "General_Mathematics": [
-        { "title": "বাস্তৱ সংখ্যা", "file": "https://drive.google.com/file/d/1rvKLQpRESEIXN_urIC9piJ1l6A7JdzpE/preview", "status": "free" },
-        { "title": "বহুপদ", "file": "https://drive.google.com/file/d/1-id7gbZIA40wxrF6M9_JPRNU0vCxeDu6/preview", "status": "free" },
-        { "title": "দুটা চলকত ৰৈখিক সমীকৰণৰ যোৰ", "file": "https://drive.google.com/file/d/1kexOHjf-_rtZmhOhspNjaR6JUMYG23zN/preview", "status": "free" },
-        { "title": "দ্বিঘাত সমীকৰণ", "file": "https://drive.google.com/file/d/1RRcnyn--qArAUHZAnWG1zpIipLywSFED/preview", "status": "free" }
+        { "title": "বাস্তৱ সংখ্যা (MCQ Note)", "file": "https://drive.google.com/file/d/1RRcnyn--qArAUHZAnWG1zpIipLywSFED/preview", "status": "free" },
+        { "title": "বহুপদ (MCQ Note)", "file": "https://drive.google.com/file/d/18Wyfs3-0qqRm-OV0Rse8zyzNXyy89R5Q/preview", "status": "free" },
+        { "title": "দুটা চলক যুক্ত ৰৈখিক সমীকৰণ (MCQ Note)", "file": "https://drive.google.com/file/d/1Kro5HYwiXkdx0a9PZtNuOsrRxnuNAqAi/preview", "status": "free" },
+        { "title": "দ্বিঘাত সমীকৰণ (MCQ Note)", "file": "https://drive.google.com/file/d/1LY6Cf9P3eukFNpI72zayA2s3opL-rk1M/preview", "status": "free" },
+        { "title": "ত্ৰিকোণমিতিৰ পৰিচয় (MCQ Note)", "file": "https://drive.google.com/file/d/1CjZvT4hhaZZJPuBCLNIdpAGC7ODpyzcG/preview", "status": "free" }
       ],
       "Social_Science": [
-        { "title": "বংগ বিভাজন আৰু স্বদেশী আন্দোলন", "file": "https://drive.google.com/file/d/1Ynl_M7gEjbWgNiuhrdzBmnS_ULR5t9lU/preview", "status": "free" }
+        { "title": "বংগ বিভাজন আৰু স্বদেশী আন্দোলন", "file": "https://drive.google.com/file/d/1dMXe6cQyVTKSHUrqZGoeCLQExcYFphul/preview", "status": "free" },
+        { "title": "অৰ্থনৈতিক ভূগোল", "file": "https://drive.google.com/file/d/1HCOnqUqI_knYh8XssqE_03G7EUZIGjUe/preview", "status": "free" }
       ],
       "Assamese": [
         { "title": "বৰগীত", "file": "https://drive.google.com/file/d/1WNAh7fbK9UTMKIIQwhTwoL5tG704cgzu/preview", "status": "free" },
-        { "title": "উদ্যোগী হওঁ আহাঁ", "file": "https://drive.google.com/file/d/1di-PrKglthlMSxLNTNoNvUvaMBy7VDrZ/preview", "status": "free" }
+        { "title": "উদ্যোগী হওঁ আহাঁ", "file": "https://drive.google.com/file/d/1di-PrKglthlMSxLNTNoNvUvaMBy7VDrZ/preview", "status": "free" },
+        { "title": "প্ৰশস্তি", "file": "https://drive.google.com/file/d/1lFlz17cEgD713-89VeYYHGvvTfsyqTzQ/preview", "status": "free" },
+        { "title": "দৃষ্টান্ত", "file": "https://drive.google.com/file/d/1RU8E0jO1NsUTYf1AyCFgE_Xf9fiKQE5r/preview", "status": "free" },
+        { "title": "ভাৰতীয় সংস্কৃতি", "file": "https://drive.google.com/file/d/12qp643C1LxwBKxkfHMecTLHQBwTtW6IL/preview", "status": "free" },
+        { "title": "বিষাদযোগ", "file": "https://drive.google.com/file/d/1OqauCeEUY-5OYsTF6iwOrWcTXUNLcHMn/preview", "status": "free" },
+        { "title": "কানাইৰ চাতুৰী", "file": "https://drive.google.com/file/d/16EjBMGcsUmddbaK9kv_ZYq93QAvYNlkc/preview", "status": "free" }
       ]
     }
   },
   "videos": {
     "class9": { "General_Science": [] },
     "class10": {
-      "General_Science": [
-        { "title": "Chemical Reactions (Lecture 1)", "file": "https://www.youtube.com/embed/dQw4w9WgXcQ", "status": "free" }
-      ]
+      "General_Science": []
     }
   },
   "tests": {
     "class9": { "English": [] },
     "class10": {
+      "General_Science": [
+        { "title": "বিজ্ঞান আৰু গণিত MCQ অনলাইন পৰীক্ষা", "link": "https://opal.google/app/16rQJXcs_9jYqZIE59u0FTMTopVxCyW_q", "status": "free" }
+      ],
       "English": [
         { "title": "Grammar: Tense Mastery (Timed)", "link": "https://app.quilgo.com/t/QcR7c9YPfZVJsRIc", "status": "free" }
       ]
     }
   }
-}
-  
+  }
