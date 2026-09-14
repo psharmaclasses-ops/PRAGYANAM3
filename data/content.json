@@ -1,5 +1,5 @@
-  {
-  "lastUpdate": "2026-09-09",
+{
+  "lastUpdate": "2026-09-14",
   "notifications": [
     {
       "id": 1,
@@ -21,13 +21,35 @@
       "message": "দশম শ্ৰেণীৰ গণিত, বিজ্ঞান, অসমীয়া আৰু সমাজ বিজ্ঞানৰ নতুন অধ্যায়সমূহ আৰু অনলাইন পৰীক্ষা উপলব্ধ কৰা হৈছে।",
       "type": "info",
       "timestamp": "2026-09-09"
+    },
+    {
+      "id": 7,
+      "title": "নৱম শ্ৰেণীৰ নতুন পাঠ্যক্ৰম সংযোজন! 🎓📖",
+      "message": "নৱম শ্ৰেণীৰ গণিত আৰু ইংৰাজী বিষয়ৰ সম্পূৰ্ণ পাঠ্য টোকা উপলব্ধ কৰা হৈছে।",
+      "type": "info",
+      "timestamp": "2026-09-14"
     }
   ],
   "notes": {
     "class9": {
-      "English": [],
+      "English": [
+        { "title": "The Road Not Taken", "file": "https://drive.google.com/file/d/1vlp3Fktb_kv42LTZ4E8LxFiCYDXJMAZC/preview", "status": "free" },
+        { "title": "The Sound of Music", "file": "https://drive.google.com/file/d/1Rv-S4NPZ4tfc7lOoaxBIsG4YFCnFF_FE/preview", "status": "free" },
+        { "title": "My Childhood", "file": "https://drive.google.com/file/d/16f8zlAx5hs0TWH1a-CCefrHXr7ABruE8/preview", "status": "free" },
+        { "title": "The Fun They Had", "file": "https://drive.google.com/file/d/19qtTgsv--1J-XkF_mG0OQUIn7n5zJrBz/preview", "status": "free" },
+        { "title": "The Lake Isle of Innisfree", "file": "https://drive.google.com/file/d/1Kc6Dty0kLJ7dOyNYMvQFkPpxOPjlieDS/preview", "status": "free" },
+        { "title": "The Adventures of Toto", "file": "https://drive.google.com/file/d/1-nI6EK26iljVnFX5GFPteJtcE4wnP503/preview", "status": "free" },
+        { "title": "Kaziranga and Sivasagar", "file": "https://drive.google.com/file/d/15zM3agiz9YC8Ht54g3P_aKQBzuB1EaBo/preview", "status": "free" }
+      ],
       "General_Science": [],
-      "General_Mathematics": [],
+      "General_Mathematics": [
+        { "title": "সংখ্যা প্ৰণালী", "file": "https://drive.google.com/file/d/1lkjF9eqpbDFt7OlCMMqJshde5NBGdaoa/preview", "status": "free" },
+        { "title": "বহুপদ", "file": "https://drive.google.com/file/d/1BtHR2PyAbxcYav_vpIgcTN3FxHM5-lBi/preview", "status": "free" },
+        { "title": "দুটা চলক যুক্ত ৰৈখিক সমীকৰণ", "file": "https://drive.google.com/file/d/1SNycS7vkbRAyizHQinxHBlIemW1-zWs0/preview", "status": "free" },
+        { "title": "স্থানাংক জ্যামিতি", "file": "https://drive.google.com/file/d/1Bnn0U1Ppa5WrI8OQDr-4acJtXNsGokzx/preview", "status": "free" },
+        { "title": "ৰেখা আৰু কোণ", "file": "https://drive.google.com/file/d/1oFme4J2ON03diWWf6Aacxtis_Ivhi6Jd/preview", "status": "free" },
+        { "title": "ত্ৰিভুজ", "file": "https://drive.google.com/file/d/1Rr3alQIVvvImwiAzjjFykoBpH2tlblVE/preview", "status": "free" }
+      ],
       "Social_Science": [],
       "Assamese": []
     },
@@ -83,4 +105,4 @@
       ]
     }
   }
-  }
+}
