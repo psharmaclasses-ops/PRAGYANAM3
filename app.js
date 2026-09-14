@@ -26,10 +26,11 @@ function convertToAssameseNumber(num) {
     return num.toString().split('').map(d => assameseDigits[d] || d).join('');
 }
 
-// Load Content Data
+// Load Content Data with Cache-Buster
 async function loadContentData() {
     try {
-        const response = await fetch('./data/content.json');
+        // Adding timestamp ensures browser NEVER serves old cached content.json
+        const response = await fetch(`./data/content.json?nocache=${new Date().getTime()}`);
         appData = await response.json();
         console.log('App Data loaded successfully:', appData);
         updateNotificationBadge();
@@ -200,11 +201,11 @@ function renderNotesView(targetSubject = 'all') {
     let subjectFiltersHtml = `
         <div class="filter-scroll">
             <button class="filter-pill ${currentSubjectFilter === 'all' ? 'active' : ''}" onclick="filterBySubject('all')">সকলো</button>
-            <button class="filter-pill ${currentSubjectFilter === 'General_Science' ? 'active' : ''}" onclick="filterBySubject('General_Science')">বিজ্ঞান</button>
             <button class="filter-pill ${currentSubjectFilter === 'General_Mathematics' ? 'active' : ''}" onclick="filterBySubject('General_Mathematics')">গণিত</button>
+            <button class="filter-pill ${currentSubjectFilter === 'English' ? 'active' : ''}" onclick="filterBySubject('English')">ইংৰাজী</button>
+            <button class="filter-pill ${currentSubjectFilter === 'General_Science' ? 'active' : ''}" onclick="filterBySubject('General_Science')">বিজ্ঞান</button>
             <button class="filter-pill ${currentSubjectFilter === 'Assamese' ? 'active' : ''}" onclick="filterBySubject('Assamese')">অসমীয়া</button>
             <button class="filter-pill ${currentSubjectFilter === 'Social_Science' ? 'active' : ''}" onclick="filterBySubject('Social_Science')">সমাজ বিজ্ঞান</button>
-            <button class="filter-pill ${currentSubjectFilter === 'English' ? 'active' : ''}" onclick="filterBySubject('English')">ইংৰাজী</button>
         </div>
     `;
 
@@ -225,10 +226,6 @@ function renderNotesView(targetSubject = 'all') {
     let listHtml = '';
     if (allItems.length > 0) {
         allItems.forEach(item => {
-            const fileUrl = item.file.includes('drive.google.com/uc?id=') 
-                ? item.file.replace('uc?id=', 'file/d/') + '/view' 
-                : item.file;
-
             listHtml += `
                 <div class="note-card-item">
                     <div class="note-icon-col"><i class="fa-solid fa-file-pdf"></i></div>
@@ -237,7 +234,7 @@ function renderNotesView(targetSubject = 'all') {
                         <h4 class="note-item-title">${item.title}</h4>
                         <p class="note-item-desc">বিনামূলীয়া পিডিএফ নোটছ</p>
                     </div>
-                    <a href="${fileUrl}" target="_blank" rel="noopener noreferrer" class="download-pdf-btn">
+                    <a href="${item.file}" target="_blank" rel="noopener noreferrer" class="download-pdf-btn">
                         <i class="fa-solid fa-eye"></i> চাওক
                     </a>
                 </div>
