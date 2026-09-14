@@ -1,12 +1,11 @@
-const CACHE_NAME = 'pragyanom-v11';
+const CACHE_NAME = 'pragyanom-v12';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './style.css',
   './app.js',
   './manifest.json',
-  './logopng.webp',
-  './data/content.json'
+  './logopng.webp'
 ];
 
 // Install Event
@@ -34,8 +33,12 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch Event - Network first, fallback to cache
+// Fetch Event - Bypass Cache for content.json
 self.addEventListener('fetch', (event) => {
+  if (event.request.url.includes('content.json')) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
   event.respondWith(
     fetch(event.request).catch(() => {
       return caches.match(event.request);
