@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-14",
+  "lastUpdate": "2026-09-18",
   "notifications": [
     {
       "id": 1,
@@ -25,9 +25,9 @@
     {
       "id": 7,
       "title": "নৱম শ্ৰেণীৰ নতুন পাঠ্যক্ৰম সংযোজন! 🎓📖",
-      "message": "নৱম শ্ৰেণীৰ গণিত আৰু ইংৰাজী বিষয়ৰ সম্পূৰ্ণ পাঠ্য টোকা উপলব্ধ কৰা হৈছে।",
+      "message": "নৱম শ্ৰেণীৰ গণিত, ইংৰাজী আৰু সাধাৰণ বিজ্ঞানৰ সম্পূৰ্ণ পাঠ্য টোকা উপলব্ধ কৰা হৈছে।",
       "type": "info",
-      "timestamp": "2026-09-14"
+      "timestamp": "2026-09-18"
     }
   ],
   "notes": {
@@ -41,7 +41,15 @@
         { "title": "The Adventures of Toto", "file": "https://drive.google.com/file/d/1-nI6EK26iljVnFX5GFPteJtcE4wnP503/preview", "status": "free" },
         { "title": "Kaziranga and Sivasagar", "file": "https://drive.google.com/file/d/15zM3agiz9YC8Ht54g3P_aKQBzuB1EaBo/preview", "status": "free" }
       ],
-      "General_Science": [],
+      "General_Science": [
+        { "title": "আমাৰ চাৰিওফালৰ বস্তুবোৰ", "file": "https://drive.google.com/file/d/1DWXdQiBVT9202uXqL4oq1wfT1P_DdsjJ/preview", "status": "free" },
+        { "title": "আমাৰ চাৰিওফালৰ বস্তুবোৰ বিশুদ্ধনে?", "file": "https://drive.google.com/file/d/1Hkg0cCKBfUCDTY-GUXZ47FIURL4C-2n0/preview", "status": "free" },
+        { "title": "গতি", "file": "https://drive.google.com/file/d/163QBmotSXfdZzaMMtHk4l0Ygxanxl6tT/preview", "status": "free" },
+        { "title": "বল আৰু গতি বিষয়ক সূত্ৰসমূহ", "file": "https://drive.google.com/file/d/16NjfjwDhfNB9ydQCP31E96DMOzU9DNNk/preview", "status": "free" },
+        { "title": "মহাকৰ্ষণ", "file": "https://drive.google.com/file/d/1paEOk0wVkP_SdDG5FWbKyJydgLnfxOV4/preview", "status": "free" },
+        { "title": "কোষৰ মৌলিক একক", "file": "https://drive.google.com/file/d/1xwPMxQBjqpzAOx9AHTlE51BqR4kpOqE4/preview", "status": "free" },
+        { "title": "কলা", "file": "https://drive.google.com/file/d/1YU5hV-ua7vUjYu2hNa5wTH0QPliHRRmn/preview", "status": "free" }
+      ],
       "General_Mathematics": [
         { "title": "সংখ্যা প্ৰণালী", "file": "https://drive.google.com/file/d/1lkjF9eqpbDFt7OlCMMqJshde5NBGdaoa/preview", "status": "free" },
         { "title": "বহুপদ", "file": "https://drive.google.com/file/d/1BtHR2PyAbxcYav_vpIgcTN3FxHM5-lBi/preview", "status": "free" },
