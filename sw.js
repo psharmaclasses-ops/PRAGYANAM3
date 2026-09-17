@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pragyanom-v12';
+const CACHE_NAME = 'pragyanom-v13';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
