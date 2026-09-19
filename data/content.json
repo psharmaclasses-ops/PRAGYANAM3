@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-09-18",
+  "lastUpdate": "2026-09-19",
   "notifications": [
     {
       "id": 1,
@@ -28,6 +28,13 @@
       "message": "নৱম শ্ৰেণীৰ গণিত, ইংৰাজী আৰু সাধাৰণ বিজ্ঞানৰ সম্পূৰ্ণ পাঠ্য টোকা উপলব্ধ কৰা হৈছে।",
       "type": "info",
       "timestamp": "2026-09-18"
+    },
+    {
+      "id": 8,
+      "title": "দশম শ্ৰেণী বিজ্ঞানৰ নতুন নোটছ! 🧪⚡",
+      "message": "দশম শ্ৰেণীৰ বিজ্ঞান বিষয়ৰ নতুন অধ্যায়সমূহ আপডেট কৰা হৈছে।",
+      "type": "info",
+      "timestamp": "2026-09-19"
     }
   ],
   "notes": {
@@ -70,9 +77,14 @@
         { "title": "Transformation of Sentences", "file": "https://drive.google.com/file/d/1uAMhQ4SzccbniQIR0_YNFRXQnu-GU5x4/preview", "status": "free" }
       ],
       "General_Science": [
-        { "title": "মৌলৰ পৰ্যাবৃত্ত শ্ৰেণীবিভাজন", "file": "https://drive.google.com/file/d/1-id7gbZIA40wxrF6M9_JPRNU0vCxeDu6/preview", "status": "free" },
-        { "title": "ৰাসায়নিক বিক্ৰিয়া আৰু সমীকৰণ", "file": "https://drive.google.com/file/d/1rvKLQpRESEIXN_urIC9piJ1l6A7JdzpE/preview", "status": "free" },
-        { "title": "জীৱনপ্ৰক্ৰিয়া", "file": "https://drive.google.com/file/d/1kexOHjf-_rtZmhOhspNjaR6JUMYG23zN/preview", "status": "free" }
+        { "title": "মৌলৰ পৰ্যাবৃত্ত শ্ৰেণীবিভাজন", "file": "https://drive.google.com/file/d/19-4fjC-GLy5zuSE5qmSFMk6pGHtZKuRG/preview", "status": "free" },
+        { "title": "ৰাসায়নিক বিক্ৰিয়া আৰু সমীকৰণ", "file": "https://drive.google.com/file/d/1htYynNLNVOXOWg9H7FlT97hITA8jihhh/preview", "status": "free" },
+        { "title": "জীৱন প্ৰক্ৰিয়া", "file": "https://drive.google.com/file/d/16x31Jmdc3EW2SsGJ36wdWRufUHuGtYE7/preview", "status": "free" },
+        { "title": "নিয়ন্ত্ৰণ আৰু সমনয়", "file": "https://drive.google.com/file/d/1zFuYfA8_HPashRcEnICX-m0B4FuoWugL/preview", "status": "free" },
+        { "title": "বংশগতি আৰু ক্ৰম বিকাশ", "file": "https://drive.google.com/file/d/1hi1hhCPwEtVO6yc6CC8sEfxt5ui7626e/preview", "status": "free" },
+        { "title": "পোহৰ প্ৰতিফলন আৰু প্ৰতিসৰণ", "file": "https://drive.google.com/file/d/1ZnYyA7cCJdqS1B9Ew9RnxozRUTzNci7v/preview", "status": "free" },
+        { "title": "মানুহৰ চকু আৰু বাৰেবৰণীয়া পৃথিৱী", "file": "https://drive.google.com/file/d/1zHGlv35ZbHtDJuGQTZlspg2XxZ3l0klD/preview", "status": "free" },
+        { "title": "শক্তিৰ উৎস সমূহ", "file": "https://drive.google.com/file/d/1e3ToOSxs7Gd9ngCFXug0X3gBkCfbx4OG/preview", "status": "free" }
       ],
       "General_Mathematics": [
         { "title": "বাস্তৱ সংখ্যা (MCQ Note)", "file": "https://drive.google.com/file/d/1RRcnyn--qArAUHZAnWG1zpIipLywSFED/preview", "status": "free" },
